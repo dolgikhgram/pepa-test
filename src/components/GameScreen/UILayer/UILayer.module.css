@@ -1,0 +1,333 @@
+.uiLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  pointer-events: auto;
+  z-index: 21;
+}
+
+.logo {
+  width: auto;
+  height: 29px;
+  display: block;
+}
+
+/* Mode Selection */
+.modeSelection {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.mode {
+  width: 80px;
+  height: 24px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  opacity: 0.5;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: opacity 0.2s;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modeActive {
+  opacity: 1;
+}
+
+/* Value Adjustment */
+.valueAdjustment {
+  width: 359px;
+  height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    pointer-events: auto;
+    justify-content: space-between;
+    border-width: 1px;
+    border-radius: 24px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.adjustButton {
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    width: 80px;
+    height: 44px;
+    opacity: 1;
+    border-radius: 16px;
+    border-width: 1px;
+    gap: 9px;
+    padding-top: 15px;
+    padding-right: 12px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid;
+    border-image-source: linear-gradient(82.04deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0.25) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 24px 0px rgba(255, 255, 255, 0.2) inset;
+}
+
+.adjustButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.adjustButton:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.valueDisplay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.valueText {
+  font-family: Rubik, sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: var(--Custom-white, rgba(255, 255, 255, 1));
+  transition: color 0.3s ease;
+}
+
+.valueText.increase {
+  animation: balanceIncrease 0.6s ease-out;
+}
+
+.valueText.decrease {
+  animation: balanceDecrease 0.6s ease-out;
+}
+
+@keyframes balanceIncrease {
+  0% {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1);
+  }
+  50% {
+    color: rgba(144, 238, 144, 1);
+    transform: scale(1.15);
+    text-shadow: 0 0 10px rgba(144, 238, 144, 0.8);
+  }
+  100% {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1);
+  }
+}
+
+@keyframes balanceDecrease {
+  0% {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1);
+  }
+  50% {
+    color: rgba(255, 100, 100, 1);
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 100, 100, 0.8);
+  }
+  100% {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1);
+  }
+}
+
+.diamondIcon {
+  font-size: 16px;
+  color: #00d4ff;
+}
+
+/* Preset Buttons */
+.presetButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  pointer-events: auto;
+}
+
+.presetButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  width: 68.6px;
+  height: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(7px)
+
+}
+.presetButtonValue{
+  font-family: Rubik,sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--Native-button_text_color, rgba(255, 255, 255, 1));
+}
+.presetButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.presetButton:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Autoplay Section */
+.autoplaySection {
+  margin-bottom: 15px;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.autoplayButton {
+  width: 359px;
+  height: 40px;
+  border-width: 1px;
+  border-radius: 16px;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: 1px solid;
+  border-image-source: linear-gradient(82.04deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0.25) 100%);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 24px 0px rgba(255, 255, 255, 0.2) inset;
+}
+
+.autoplayCenter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.autoplayButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.autoplayText{
+  font-family: Rubik, sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--Native-button_text_color, rgba(255, 255, 255, 1));
+
+}
+
+.autoplayIcon {
+  font-size: 18px;
+}
+
+.caretIcon {
+  font-size: 14px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Play Button */
+.playButton {
+  width: 359px;
+  height: 64px;
+  padding: 18px;
+  background: linear-gradient(91.56deg, #6F82FF 0%, #A6AAFF 24.05%, #8362FF 47.12%, #E36AFF 61.88%, #EBC7F7 77.77%, #E72BF4 100%);
+  box-shadow: 0px 0px 24px 0px rgba(255, 255, 255, 0.95) inset;
+
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+.playButtonText{
+  font-family: Rubik,sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 17px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--Custom-black, rgba(0, 0, 0, 1));
+}
+
+.playButton:hover {
+  opacity: 0.9;
+}
+
+.playButton:active {
+  opacity: 0.8;
+}
+

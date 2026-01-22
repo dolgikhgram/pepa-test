@@ -1,0 +1,41 @@
+.particlesContainer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 12;
+}
+
+.particle {
+  position: absolute;
+  font-family: Rubik, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 1);
+  text-shadow: 1px 2px 0px rgba(0, 0, 0, 1);
+  animation: particleFade 0.8s ease-out forwards;
+}
+
+.particle.multiplier {
+  color: rgba(255, 215, 0, 1);
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+}
+
+.particle.additive {
+  color: rgba(144, 238, 144, 1);
+  filter: drop-shadow(0 0 8px rgba(144, 238, 144, 0.8));
+}
+
+@keyframes particleFade {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx, 0), var(--ty, 0)) scale(0.5);
+  }
+}
+

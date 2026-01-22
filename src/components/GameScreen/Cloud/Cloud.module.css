@@ -1,0 +1,24 @@
+.cloud {
+  position: absolute;
+  right: -200px;
+  pointer-events: none;
+  animation: moveLeft linear infinite;
+  z-index: 1;
+}
+
+.cloudImage {
+  width: 150px;
+  height: 100px;
+  opacity: 0.8;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes moveLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100vw - 200px));
+  }
+}

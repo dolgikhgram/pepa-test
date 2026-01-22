@@ -1,0 +1,79 @@
+.airplane {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  transform-origin: center center;
+  transition: none; /* Отключаем CSS transitions для плавной анимации через JS */
+}
+
+.airplaneImage {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Анимация разбития/исчезновения самолета */
+.crashing {
+  animation: crashAnimation 1s ease-out forwards;
+}
+
+@keyframes crashAnimation {
+  0% {
+    opacity: 1;
+    filter: brightness(1) blur(0px);
+  }
+  30% {
+    opacity: 0.8;
+    filter: brightness(1.2) blur(1px);
+  }
+  60% {
+    opacity: 0.4;
+    filter: brightness(0.6) blur(2px);
+  }
+  100% {
+    opacity: 0;
+    filter: brightness(0.3) blur(4px);
+  }
+}
+
+/* Эффект столкновения с торпедой (красная вспышка и пульсация) */
+.collisionTorpedo {
+  animation: collisionTorpedoEffect 0.3s ease-out;
+}
+
+@keyframes collisionTorpedoEffect {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0px rgba(255, 0, 0, 0));
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) scale(1);
+  }
+  50% {
+    filter: brightness(1.8) drop-shadow(0 0 20px rgba(255, 0, 0, 0.8));
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) scale(1.1);
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0px rgba(255, 0, 0, 0));
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) scale(1);
+  }
+}
+
+/* Эффект столкновения с бонусом (золотая вспышка и пульсация) */
+.collisionBonus {
+  animation: collisionBonusEffect 0.3s ease-out;
+}
+
+@keyframes collisionBonusEffect {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0px rgba(255, 215, 0, 0));
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) scale(1);
+  }
+  50% {
+    filter: brightness(1.6) drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) scale(1.1);
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0px rgba(255, 215, 0, 0));
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) scale(1);
+  }
+}
+

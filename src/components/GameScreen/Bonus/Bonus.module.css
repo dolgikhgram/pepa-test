@@ -1,0 +1,63 @@
+.bonus {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  background-image: url('/приложение самолет_Монтажная область 1 копия 17.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 102px;
+  height: 102px;
+  animation: bonusFloat 3s ease-in-out infinite, bonusPulse 2s ease-in-out infinite;
+}
+
+@keyframes bonusFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes bonusPulse {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    filter: brightness(1.3) drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Rubik, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 1);
+  text-shadow: 1px 2px 0px rgba(0, 0, 0, 1);
+  white-space: nowrap;
+  animation: valueGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes valueGlow {
+  0%, 100% {
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 1), 0 0 15px rgba(255, 215, 0, 0.9);
+  }
+}
+

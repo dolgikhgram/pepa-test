@@ -1,0 +1,24 @@
+.app-root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #020617; /* тёмный фон под Telegram */
+}
+
+.game-wrapper {
+  /* Игра занимает всю доступную высоту, но не выходит за края */
+  width: 100%;
+  max-width: 480px; /* комфортная ширина под вертикальный формат телефонов */
+  max-height: 100vh;
+
+  /* Вертикальный формат “экрана телефона” */
+  aspect-ratio: 9 / 16;
+
+  background: #0f172a;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+}
+
